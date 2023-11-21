@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>HTML-basics</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css"
+      integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css"
+      integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css"
+      integrity="sha512-bfCyfT+5Js2CKjpiF7yCtTcNlNTtcdAIHV8DfGLCQuTfTEHTU9uEvhQ/Ty4zv3IRtkFQu8DKeM2MHGka+K/cxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css"
+      integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./public/tailwind.css" />
+
+    <style>
+      .reveal code {
+        color: var(--r-link-color-hover);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>CSS 101</h2>
+          <img
+            width="200px"
+            src="https://cdn-icons-png.flaticon.com/512/1147/1147106.png"
+          />
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## CSS = Cascading Style Sheets
+							A language that describes the style of an HTML document
+
+							---
+							### If HTML is the skeleton, CSS is the skin
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+								### CSS & HTML are NOT programming languages
+								They are <span class="text-red-400">rules</span> and <span class="text-green-500">instructions</span> for the browser
+
+								---
+								### Example:
+
+								```
+								h1 {
+									color: red;
+								}
+								```
+
+								<h1 class="!text-red-700">RED TEXT</h1>
+
+								---
+								```
+								h1 {
+									color: red;
+								}
+								```
+								
+								- `h1` : selector.
+								- `{}` : declaration block.
+								- `color` : property. 
+								- `red` : value
+								---
+								You can apply many properties to one selector!
+								```
+								h1 {
+									color: limegreen;
+									font-size: 60px;
+									font-weight: normal;
+									text-decoration: underline;
+									text-transform: uppercase;
+									border: 3px solid pink;
+								}
+								```
+								```html
+								<h1>Hello</h1>
+								```
+								---
+								### Result
+								<h1 style="color: limegreen; font-size: 60px; font-weight: normal; text-decoration: underline; text-transform: uppercase; border: 3px solid pink;">Hello</h1>
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Parents and Children
+							---
+							```html
+							<div>
+								<h1>an h1 tag</h1>
+							</div>
+							```
+							---
+							What if we style the div with the following CSS?
+							```css
+							div {
+								color: red;
+							}
+							```
+							---
+							### The h1 tag will also be red!
+							<h1 style="color:red">an h1 tag</h1>
+							---
+							### The parent element CSS also affects the children
+
+							---
+							### But what if we style the h1 tag with the following CSS?
+							```css
+							div {
+								color: red;
+							}
+							h1 {
+								color: blue;
+							}
+							```
+							---
+							### The h1 tag will be blue!
+							<h1 style="color:blue">an h1 tag</h1>
+							---
+							### The child element CSS overrides the parent CSS
+							---
+							### This also work if you they have more nested elements
+							```html
+							<div>
+								<div>
+									<span>an h1 tag</span>
+								</div>
+							</div>
+							```
+							<div style="color: aquamarine;">
+								<div>
+									<span>dummy text</span>
+								</div>
+							</div>
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Colors
+							---
+							- Named colors
+							- Hexadecimal
+							- RGB
+							- RGBA
+							- HSL
+
+							Try this:
+							<input type="color" id="head" name="head" value="#e66465" />
+							---
+							### Named colors
+							```css
+							h1 {
+								color: red;
+							}
+							```
+							---
+							### Hexadecimal (hex)
+							```css
+							h1 {
+								color: #ff0000;
+							}
+							```
+							---
+							### Hexadecimal short hand
+							```css
+							p {
+								color: #f00;
+							}
+							```
+							<p class="!text-[#f00]">Also red ff0000</p>
+							---
+							### RGB (Red, Green, Blue)
+							```css
+							p {
+								color: rgb(255, 0, 0);
+							}
+							```
+							---
+							### RGBA (Red, Green, Blue, Alpha)
+							Alpha is the opacity of the color
+							```css
+							p {
+								color: rgba(255, 0, 0, 0.5);
+							}
+							```
+							<div class="h-20 bg-white">
+								<p class="text-[rgba(255,0,0,0.2)]">Also red but has alpha value</p>
+							</div>
+							---
+							### HSL (Hue, Saturation, Lightness)
+							(You won't really use this a lot.)
+							```css
+							p {
+								color: hsl(0, 100%, 50%);
+							}
+							```
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <h3>Demo</h3>
+          <span>Styling our previous Google search page</span>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### CSS selectors
+							---
+							So far we have only used the tag name as a selector
+							```css
+							h1 {
+								color: red;
+							}
+							```
+							But there are many more selectors!
+							---
+							### Class selector
+							```css
+							.red-text {
+								color: red;
+							}
+							.blue-text {
+								color: blue;
+							}
+							```
+							```html
+							<p class="red-text">this text is red</p>
+							<p class="blue-text">this text is blue</p>
+							```
+							<style>
+								.red-text {
+									color: red;
+								}
+								.blue-text {
+									color: blue;
+								}
+							</style>
+							<p class="red-text">this text is red</p>
+							<p class="blue-text">this text is blue</p>
+							---
+							The `.` in front of the class name help us identify it as a <span class="text-amber-400">class selector</span>
+							---
+							<h3>You should almost always use class selectors!</h3>
+							---
+							### ID selector
+							```css
+							#red-text {
+								color: red;
+								font-family: 'Courier New', Courier, monospace;
+							}
+							```
+							```html
+							<p id="red-text">this text is red</p>
+							```
+							<style>
+								#red-text {
+									color: red;
+									font-family: 'Courier New', Courier, monospace;
+								}
+							</style>
+							<p id="red-text">this text is red</p>
+							---
+							### !important
+							```css
+							.red-text {
+								color: red !important;
+							}
+							.base-text {
+								color: green;
+								font-family: 'Courier New', Courier, monospace;
+							}
+
+							```
+							```html
+							<p class="base-text red-text">This should be red</p>
+							```
+
+							<style>
+								.red-text {
+									color: red !important;
+								}
+								.base-text {
+									color: green;
+									font-family: 'Courier New', Courier, monospace;
+								}
+							</style>
+							<p class="base-text red-text">This should be red</p>
+
+							---
+							### You should avoid using #id selectors and !important as much as possible!
+
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### The Cascading
+							---
+							```css
+  							.title {
+    							color: red;
+  							}
+
+  							.title {
+    							color: green;
+  							}
+							```
+							```html
+							<h1 class="title">Cool Title</h1>
+							```
+							<h1 style="color: green">Cool Title</h1>
+							---
+							### The last rule wins!
+							---
+							```css
+							.text-base {
+								border: 1px solid white;
+								color: red;
+							}
+							.title {
+								color: green;
+							}
+							```
+							```html
+							<h2 class="text-base title">Cool title</h2>
+							```
+							---
+							`title` class come last, so it wins! but it doesn't have a `border` property, so it will be white
+							<h2 style="border: 1px solid white; color:green">Cool title</h2>
+							---
+							```css
+							.title {
+								color: red;
+							}
+
+							h1 {
+								color: green;
+							}
+							```
+							```html
+							<h1 class="title">A cool title</h1>
+							```
+							---
+							A class is more specific than a tag, so it wins!
+							<h1 style="color: red;">A cool title</h1>
+							---
+							ID selectors are more specific than class selectors
+							---
+							!important is more specific than ID selectors
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Psuedo-classes
+							---
+							<div>Sometime we want to change how elements looks based on <span class="text-amber-500">certain event happening</span> in the browser.
+							</div>
+
+							---
+							For example, we can change the color of a div element when the user hovers over it
+
+							<div class="w-40 h-40 bg-red-600 hover:bg-green-500 mx-auto">Hover me</div>
+
+							---
+							```html
+							<style>
+								.hover-example {
+									width: 100px;
+									height: 100px;
+									background-color: limegreen;
+									color: white;
+								}
+								.hover-example:hover {
+									background-color: crimson;
+									width: 150px;
+									height: 150px;
+								}
+							</style>
+							<div class="hover-example">Hover me</div>
+							```
+							<style>
+								.hover-example {
+									width: 100px;
+									height: 100px;
+									background-color: limegreen;
+									color: white;
+								}
+								.hover-example:hover {
+									background-color: crimson;
+									width: 150px;
+									height: 150px;
+								}
+							</style>
+							<div class="hover-example text-base">Hover me</div>
+							---
+							There are so many pseudo-classes, but the most common ones are:
+							- `:hover`
+							- `:focus`
+							- `:nth-child()`
+							---
+							```html
+							<style>
+								.focus-example:focus {
+									color: lightcoral;
+									text-decoration: underline;
+									text-transform: uppercase;
+								}
+							</style>
+							<input class="focus-example" type="text" />
+							```
+							<style>
+								.focus-example:focus {
+									color: lightcoral;
+									text-decoration: underline;
+									text-transform: uppercase;
+								}
+							</style>
+							<input class="focus-example" placeholder="Input something" type="text" />
+							---
+							```html
+							<style>
+								.nth-child-example:nth-child(2) {
+									color: lightcoral;
+									text-decoration: underline;
+									text-transform: uppercase;
+								}
+							</style>
+							<div class="nth-child-example">
+								<p>First line</p>
+								<p>Second line</p>
+								<p>Third line</p>
+							</div>
+							```
+							<style>
+								.nth-child-example:nth-child(2) {
+									color: lightcoral;
+									text-decoration: underline;
+									text-transform: uppercase;
+								}
+							</style>
+							<div>
+								<p class="nth-child-example">First line</p>
+								<p class="nth-child-example">Second line</p>
+								<p class="nth-child-example">Third line</p>
+							</div>
+							---
+							We won't be focusing too much on other pseudo-classes for now. You can find more
+							about them [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+
+							Also a great [article](https://dev.to/ruppysuppy/master-useful-css-pseudo-classes-lh2)
+						
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Layout in CSS
+							---
+							#### The box model
+							Browser treats every element as a box
+							---
+							Open your dev tools and inspect the following div
+							<div class="w-[300px] h-[200px] p-6 m-10 border-[2px] border-solid border-green-600">Content</div>
+							---
+							- `width` and `height` are the size of the content
+							- `padding` is the space between the content and the border
+							- `margin` is the space between the border and other elements
+							- `border` is the border of the box. border also add to the size of the box
+							---
+							### Some tips
+							- Use `box-sizing: border-box` to make sure the size of the box is always the same
+							- Use `margin: 0 auto` to center a box
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Flex
+							---
+							#### Flexbox is a layout model that allows elements to align and distribute space within a container
+							---
+							#### Key concepts
+							- Flex container
+							- Flex items
+							---
+							Example
+							```html
+							<style>
+								.flex-container {
+									display: flex;
+								}
+								/* other css class */
+							</style>
+							<div class="flex-container">
+								<div>One</div>
+								<div>Two</div>
+								<div>Three</div>
+							</div>
+							```
+							<div class="flex w-auto border border-white border-solid p-4">
+								<div class="w-24 bg-green-400">One</div>
+								<div class="w-32 bg-red-400">Two</div>
+								<div class="w-48 bg-amber-500">Three</div>
+							</div>
+							---
+							### `flex-direction`
+							If not specify the default value is `row`.
+							```css
+							.flex-container {
+								display: flex;
+								flex-direction: row;
+							}
+							```
+							<div class="flex w-auto border border-white border-solid p-4">
+								<div class="w-24 bg-green-400">One</div>
+								<div class="w-32 bg-red-400">Two</div>
+								<div class="w-48 bg-amber-500">Three</div>
+							</div>
+							---
+							```css
+							.flex-container {
+								display: flex;
+								flex-direction: column;
+							}
+							```
+							<div class="flex w-auto flex-col border border-white border-solid p-4">
+								<div class="w-24 bg-green-400">One</div>
+								<div class="w-32 bg-red-400">Two</div>
+								<div class="w-48 bg-amber-500">Three</div>
+							</div>
+							---
+							### `flex-wrap`
+							Wrap items to the next line if there is not enough space
+							```css
+							.flex-container {
+								display: flex;
+								flex-wrap: wrap;
+							}
+							```
+							<div class="flex w-64 border border-white border-solid p-4 flex-wrap">
+								<div class="w-24 bg-green-400">One</div>
+								<div class="w-32 bg-red-400">Two</div>
+								<div class="w-48 bg-amber-500">Three</div>
+							</div>
+							---
+							### `justify-content`
+							Align items along the main axis
+							<img data-src="https://res.cloudinary.com/practicaldev/image/fetch/s---3gDSFf1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/fsln7je4ax7ft3er28hh.png" />
+							---
+							### `align-items`
+							Align items along the cross axis
+							<img data-src="https://res.cloudinary.com/practicaldev/image/fetch/s---3gDSFf1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/fsln7je4ax7ft3er28hh.png" />
+							---
+							```css
+							.flex-container {
+								display: flex;
+								justify-content: center;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-center">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500">Three</div>
+							</div>
+							---
+							```css
+							.flex-container {
+								display: flex;
+								justify-content: flex-start;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-start">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500">Three</div>
+							</div>
+							---
+							```css
+							.flex-container {
+								display: flex;
+								justify-content: flex-end;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-end">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500">Three</div>
+							</div>
+							---
+							```css
+							.flex-container {
+								display: flex;
+								justify-content: space-around;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-around">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500">Three</div>
+							</div>
+							---
+							```css
+							.flex-container {
+								display: flex;
+								justify-content: space-between;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-between">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500">Three</div>
+							</div>
+							---
+							```css
+							.flex-container {
+								display: flex;
+								justify-content: space-evenly;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-evenly">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500">Three</div>
+							</div>
+							---
+							### You can also use `align-items` with the same values!
+							---
+							### Here is how to center an element to middle of a `div`
+
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-center items-center">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500">Three</div>
+							</div>
+							---
+							### Flex axis cheat sheet
+							<img data-src="https://samanthaming.gumlet.io/flexbox30/4-flexbox-axes.jpg.gz" />
+							---
+							### Flex children properties
+							- `flex-grow`
+							- `align-self`
+							---
+							### `flex-grow`
+							```css
+							.flex-item {
+								flex-grow: 1;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4 justify-center items-center">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500 flex-1">Three</div>
+							</div>
+							---
+							### `align-self`
+							```css
+							.flex-item {
+								align-self: flex-end;
+								flex-grow: 1;
+							}
+							```
+							<div class="flex w-auto h-40 border border-white border-solid p-4">
+								<div class="w-24 h-fit bg-green-400">One</div>
+								<div class="w-32 h-fit bg-red-400">Two</div>
+								<div class="w-48 h-fit bg-amber-500 flex-1 self-end">Three</div>
+							</div>
+							---
+							### There are more to flex but we will visit them later. For now let's master the basics!
+							Here is a good summarize of flexbox from [CSS-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+							---
+							### Summary flexbox in 100 seconds
+							<iframe width="560" height="315" data-src="https://www.youtube.com/embed/K74l26pE4YA?si=20DA4EVLmD7h1hsd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>							
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Let's code: An online shop!
+							---
+							### Homework: Style your previous Personal Portfolio page!
+							- You should use a colors as you like and use hexdecimal color
+							- Add a section to showcase your work (if you don't have any, you can use dummy images). Use flex for this
+							- Use different font for your page
+							- Make it nicer
+						</textarea
+            >
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"
+      integrity="sha512-131e3mIrDAyUD075SVzvIjS0g97uDg0+/qAobDHd++h+lgFi4z88DVOpidm06jpb+0PzK4kcm9w79r6EHV0SkA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"
+      integrity="sha512-nLsCkPS/rdxRVOkxiKnld9KhQ24V/5kRChzSZ3MoFODykbWyBlQRsHLrbpN3J4LabYBnXIp1EnRIo3ifvyiQIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"
+      integrity="sha512-QAU7Ux8iEB53koLKFCtddfFp0D1+uQWoX3ROnRDLeiE98XHOkMciaup0Spc014jQAuJaqz8VjUZdBqriheI4Lg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"
+      integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+
+    <!-- CopyCode plugin for copy button on code samples -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-copycode@1.0.4/plugin/copycode/copycode.js"></script>
+
+    <script>
+      // Slides powered by revealjs.com
+
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          CopyCode,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>

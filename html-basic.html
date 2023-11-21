@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>HTML-basics</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css"
+      integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css"
+      integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css"
+      integrity="sha512-bfCyfT+5Js2CKjpiF7yCtTcNlNTtcdAIHV8DfGLCQuTfTEHTU9uEvhQ/Ty4zv3IRtkFQu8DKeM2MHGka+K/cxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css"
+      integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .reveal code {
+        color: var(--r-link-color-hover);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>HTML 101</h2>
+          <aside class="notes">Sercet</aside>
+        </section>
+        <section>
+          <section>
+            <h2>What is HTML</h2>
+          </section>
+          <section>
+            <h3>HTML = Hyper Text Markup Language</h3>
+          </section>
+
+          <section>
+            <p>A HTML document is like <a>Sekeleton</a> of the web page</p>
+            <iframe
+              data-src="https://giphy.com/embed/QuxqWk7m9ffxyfoa0a"
+              width="480"
+              height="360"
+              frameborder="0"
+              class="giphy-embed"
+              allowfullscreen
+            ></iframe>
+            <p></p>
+          </section>
+          <aside class="notes">Sercet</aside>
+        </section>
+        <section>
+          <section>
+            <h3><code>Structure</code> of HTML documents</h3>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+						### A simple `document`
+						```html
+						<!DOCTYPE html>
+						<html>
+							<head>
+								<title>Page Title</title>
+							</head>
+							<body>
+								<h1>My First Heading</h1>
+								<p>My first paragraph.</p>
+							</body>
+						</html>
+						```
+						---
+						
+						`<!DOCTYPE html>` 
+
+						The document type declaration
+						---
+						`<html>`
+						
+						The root element of an HTML page
+						---
+						`<head>`
+							
+						Contains meta information about the document
+						---
+						`<body>`
+							
+						Contains the contents of webpage
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2><code>HTML</code> tags</h2>
+          </section>
+          <section>
+            <p>HTML <a>tags</a> are the building block of webpage</p>
+            <img
+              height="200px"
+              data-src="https://www.lego.com/cdn/cs/set/assets/blt502f9c4e3f68c553/5006929.png?fit=bounds&format=png&width=1500&height=1500&dpr=1"
+            />
+          </section>
+          <section>
+            <p>They tell the browser how to display the content</p>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+							There are open tags and close tags
+							---
+							### Example
+							- Open tag: `<body>`
+							- Close tag: `</body>`
+							
+							---
+							### The content go in between the tags
+							```html
+								<h1>My First Heading</h1>
+							```
+							---
+							### They can also be nested
+							```html
+							<body>
+								<h1>My First Heading</h1>
+								<p>My first paragraph.</p>
+							</body>
+							```
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+								### Common HTML tags
+								---
+								### Headings
+								```html
+								<h1>Heading 1</h1>
+								<h2>Heading 2</h2>
+								<h3>Heading 3</h3>
+								<h4>Heading 4</h4>
+								<h5>Heading 5</h5>
+								<h6>Heading 6</h6>
+								```
+								---
+								<h1>Heading 1</h1>
+								<h2>Heading 2</h2>
+								<h3>Heading 3</h3>
+								<h4>Heading 4</h4>
+								<h5>Heading 5</h5>
+								<h6>Heading 6</h6>
+								---
+								```html
+								<title>My page</title>
+								```
+								The title of the page (displayed in the browser tab)
+
+								---
+								```html
+								<p>My first paragraph.</p>
+								```
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus dolor placeat cupiditate amet? Quas, non itaque, eligendi possimus exercitationem quia voluptatibus sequi id obcaecati doloribus sint recusandae et quisquam odio!</p>
+								---
+								```html
+								<a href="https://boomco.org">Boomco homepage</a>
+								```
+								Define a <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">link</a>
+								---
+								```html
+								<div style="width: 100px; height: 100px; background-color: red;""></div>
+								```
+								<div style="width: 100px; height: 100px; background-color: red;""></div>
+								---
+								### 🚨 You will use a lot of `div` ‼ 🚨
+								---
+								```html
+								<img src="https://imgs.xkcd.com/comics/tags.png" />
+								```
+								<img data-src="https://imgs.xkcd.com/comics/tags.png" />
+								---
+								`img` are self closing tags
+								---
+								```html
+								<ul>
+									<li>Item 1</li>
+									<li>Item 2</li>
+									<li>Item 3</li>
+								</ul>
+								```
+								<ul>
+									<li>Item 1</li>
+									<li>Item 2</li>
+									<li>Item 3</li>
+								</ul>
+								---
+								```html
+								<ol>
+									<li>Item 1</li>
+									<li>Item 2</li>
+									<li>Item 3</li>
+								</ol>
+								```
+								<ol>
+									<li>Item 1</li>
+									<li>Item 2</li>
+									<li>Item 3</li>
+								</ol>
+								---
+								```html
+								<table>
+									<tr>
+										<th>Firstname</th>
+										<th>Lastname</th>
+										<th>Age</th>
+									</tr>
+									<tr>
+										<td>Jill</td>
+										<td>Smith</td>
+										<td>50</td>
+									</tr>
+									<tr>
+										<td>Eve</td>
+										<td>Jackson</td>
+										<td>94</td>
+									</tr>
+								</table>
+								```
+								<table>
+									<tr>
+										<th>Firstname</th>
+										<th>Lastname</th>
+										<th>Age</th>
+									</tr>
+									<tr>
+										<td>Jill</td>
+										<td>Smith</td>
+										<td>50</td>
+									</tr>
+									<tr>
+										<td>Eve</td>
+										<td>Jackson</td>
+										<td>94</td>
+									</tr>
+								</table>
+								---
+								And there are so many more tags
+								
+								Where to find them?
+								
+								<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"> 💫 MDN 💫</a> is your best friends
+							</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## HTML attributes
+							---
+							### Attributes are added to the opening tag
+							```html
+							<a href="https://boomco.org">Boomco homepage</a>
+							```
+							---
+							### Attributes are used to provide additional information about HTML elements
+							```html
+							<img src="https://imgs.xkcd.com/comics/tags.png" />
+							```
+							---
+							### Attributes are always specified in the start tag
+							```html
+							<img src="https://imgs.xkcd.com/comics/tags.png" />
+							```
+							---
+							### Attributes usually come in name/value pairs like: name="value"
+							```html
+							<input type="text" name="firstname" />
+							```
+							---
+							### The `class` attribute is used to specify one or more class names for an element
+							```html
+							<p class="important">This paragraph refers to something very important.</p>
+							```
+							---
+							### The `id` attribute specifies a unique id for an HTML element
+							```html
+							<p id="important">This paragraph refers to something very important.</p>
+							```
+							---
+							### The `style` attribute is used to specify the styling of an element, like color, font, size etc.
+							```html
+							<p style="color: red;">This paragraph refers to something very important.</p>
+							```
+							---
+							### The `href` attribute specifies the URL of the page the link goes to
+							```html
+							<a href="https://boomco.org">Boomco homepage</a>
+							```
+							---
+							### The `src` attribute specifies the URL of the image to be displayed
+							```html
+							<img src="https://imgs.xkcd.com/comics/tags.png" />
+							```
+							---
+							### The `alt` attribute provides an alternate text for an image, if the user for some reason cannot view it
+							```html
+							<img src="https://imgs.xkcd.com/comics/tags.png" alt="Tags" />
+							```
+							---
+							### The `width` and `height` attributes specifies the width and height of an image
+							```html
+							<img src="https://imgs.xkcd.com/comics/tags.png" width="100" height="100" />
+							```
+							---
+							### The `title` attribute specifies extra information about an element
+							```html
+							<p title="I'm a tooltip">This paragraph refers to something very important.</p>
+							```
+							---
+							### The `type` attribute specifies the type of element to display
+							```html
+							<input type="text" name="firstname" />
+							<input type="number" name="firstname" />
+							<input type="date" name="Date" />
+							
+							```
+							<input type="text" name="firstname" />
+							<input type="number" name="firstname" />
+							<input type="date" name="Date" />
+							---
+							And there are so many more HTML attributes
+							
+							Where to find them?
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"> 💫 MDN 💫</a> is your best friends
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## Demo time
+							<a>Google search page</a>
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## Class exercise
+							A blog post
+							---
+							### Requirements
+							- A title using the heading tags
+							- An image using the `img` tag
+							- A paragraph using the `p` tag
+							- A link using the `a` tag
+							- A list using the `ul` or `ol` tag
+							- A table using the `table` tag
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## Homework
+							Personal portfolio
+
+							---
+							### Requirements
+							- An image to represent yourself
+							- Your name - title and a short description
+							- A brief about me section with a list of your skills and links to your social media
+							- It doesn't have to looks good, we will learn about CSS next week!
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## Q & A
+						</textarea
+            >
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"
+      integrity="sha512-131e3mIrDAyUD075SVzvIjS0g97uDg0+/qAobDHd++h+lgFi4z88DVOpidm06jpb+0PzK4kcm9w79r6EHV0SkA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"
+      integrity="sha512-nLsCkPS/rdxRVOkxiKnld9KhQ24V/5kRChzSZ3MoFODykbWyBlQRsHLrbpN3J4LabYBnXIp1EnRIo3ifvyiQIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"
+      integrity="sha512-QAU7Ux8iEB53koLKFCtddfFp0D1+uQWoX3ROnRDLeiE98XHOkMciaup0Spc014jQAuJaqz8VjUZdBqriheI4Lg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"
+      integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+
+    <!-- CopyCode plugin for copy button on code samples -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-copycode@1.0.4/plugin/copycode/copycode.js"></script>
+
+    <script>
+      // Slides powered by revealjs.com
+
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, CopyCode],
+      });
+    </script>
+  </body>
+</html>
