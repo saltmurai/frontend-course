@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>HTML-basics</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css"
+      integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css"
+      integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css"
+      integrity="sha512-bfCyfT+5Js2CKjpiF7yCtTcNlNTtcdAIHV8DfGLCQuTfTEHTU9uEvhQ/Ty4zv3IRtkFQu8DKeM2MHGka+K/cxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css"
+      integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./public/tailwind.css" />
+    <style>
+      .reveal code {
+        color: var(--r-link-color-hover);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>Welcome to Boomco Frontend Bootcamp!</h3>
+          <img data-src="./public/boomco.png" class="h-20" alt="boomco logo" />
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### What to expect from this bootcamp?
+							---
+							#### The ultimate goal
+							<span class="text-red-400">to be job-ready</span>
+							---
+							#### 3 classes/week
+							with <span class="text-amber-500">hands on practice</span>
+							---
+							#### Learn frontend development from zero to hero
+							From the most basic things to the advanced topics, industry best practices, and more...
+							---
+							#### Have expericence working on real projects from Boomco
+							---
+							#### Projects to showcase your skills and impress your future employers
+							---
+							#### Support from Boomco with
+							- <span class="text-amber-500">Mentorship</span>
+							- <span class="text-amber-500">Intership & job opportunities</span>
+							- <span class="text-amber-500">Career advice</span>
+							- <span class="text-amber-500">Company network</span>
+							---
+							#### Have programming as a new skill
+							<img data-src="https://assets-global.website-files.com/5ef788f07804fb7d78a4127a/64255f02f925493e47854276_76eq2p.jpg" class="h-32" />
+							---
+							#### Get a job as a frontend developer
+							This course is designed to help you be job-ready as a frontend developer
+							
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Your instructor
+							---
+							#### It's me
+							<img data-src="data:image/jpeg;base64,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" />
+							---
+							#### I'm <span class="text-red-400">Sam</span>
+							- I'm a frontend developer at Boomco
+							- I graduated from Hanoi University of Science and Technology (HUST)
+							---
+							#### My contact info
+							- Email: phamsang6260@gmail.com
+							- Zalo: 096 2966 324
+							- LinkedIn: https://www.linkedin.com/in/saltmurai/
+							- Github: https://github.com/saltmurai
+							- Website: https://justsam.vercel.app/
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <img data-src="./public/curriculum.png" />
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### I'm happy to see you all here!
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### What is front end development?
+							- Convert design, idea, data into graphical user interface by writting code.
+							- The code then can be run on the browser, which is the front end of the website
+							---
+							#### Nowsaday, website is curcial for any business
+							---
+							#### Not just displaying information
+							- A tool to interact with customers
+							- Handle business logic
+							- Manage data
+							- ...
+							---
+							#### By learning front end development, you can
+							- Build your own website (even mobile, desktop app)
+							- Build website for your business
+							- Turn your idea into reality
+							---
+							#### Business website
+							---
+							#### Web appication
+							---
+							#### VR/3D
+							---
+							#### Mobile app
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Tooling setup
+							---
+							#### Text editor (IDE)
+							[Visual studio Code](https://code.visualstudio.com/)
+
+							<img data-src="https://pbs.twimg.com/profile_images/1545098208556097536/rKXaODLl_400x400.jpg" />
+							---
+							#### Make a Github account
+							[Github](https://github.com/join)
+							---
+							#### Install Git
+							[Git](https://git-scm.com/downloads)
+							---
+							#### Install Nodejs
+							[Nodejs](https://nodejs.org/en/download/)
+							---
+							#### Terminal
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Open Visual Studio Code
+							---
+							#### Install extensions
+							- [Live server](https://marketplace.visualstudio.com/items?itemName=yandeu.five-server)
+							- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+							- [Auto rename tags](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+							- [Auto close tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-complete-tag)
+							---
+							#### Start a new project
+							---
+							### Clone a project from Github
+							---
+							#### Open an existing project
+							---
+							#### Using terminal
+							---
+							#### Your first HTML file
+							- Create a new HTML file
+							- Write `!` and press `tab`
+							- Click the `Go live` button on the bottom right corner
+							- Change the title
+							- Add a heading tag
+						</textarea
+            >
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"
+      integrity="sha512-131e3mIrDAyUD075SVzvIjS0g97uDg0+/qAobDHd++h+lgFi4z88DVOpidm06jpb+0PzK4kcm9w79r6EHV0SkA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"
+      integrity="sha512-nLsCkPS/rdxRVOkxiKnld9KhQ24V/5kRChzSZ3MoFODykbWyBlQRsHLrbpN3J4LabYBnXIp1EnRIo3ifvyiQIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"
+      integrity="sha512-QAU7Ux8iEB53koLKFCtddfFp0D1+uQWoX3ROnRDLeiE98XHOkMciaup0Spc014jQAuJaqz8VjUZdBqriheI4Lg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"
+      integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+
+    <!-- CopyCode plugin for copy button on code samples -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-copycode@1.0.4/plugin/copycode/copycode.js"></script>
+
+    <script>
+      // Slides powered by revealjs.com
+
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, CopyCode],
+      });
+    </script>
+  </body>
+</html>
