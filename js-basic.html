@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>HTML-basics</title>
+    <title>Javascript fundamental</title>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link
       rel="stylesheet"
@@ -37,6 +37,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./public/tailwind.css" />
 
     <style>
       .reveal code {
@@ -48,17 +49,182 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h2>JS-basic</h2>
+          <h4>Javascript & Programming Fundamental</h4>
+          <img
+            width="300px"
+            data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png"
+          />
         </section>
         <section>
           <section data-markdown>
             <textarea data-template>
-							## Slide 1
-							Something
+							## What is Javascript?
+							---
+							JavaScript was initially created to “make web pages alive”.
+							---
+							### It is a scripting language
+							---
+							Which means it doesn't need to be compiled.
+							<img width="300px" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/V8_JavaScript_engine_logo_2.svg/1200px-V8_JavaScript_engine_logo_2.svg.png" />
+
+							The browser has a built-in JavaScript engine (which is a part of a bigger project called V8) that can read and execute JavaScript code.
+							---
+							## Why do we need Javascript?
+							---
+							To make web pages interactive.
+							---
+							## How do we write Javascript?
+							---
+
+							### Inline
+							```html
+							<button onclick="alert('Hello World!')">Click Me!</button>
+							```
+							---
+							### In script tag
+							```html
+							<script>
+								alert('Hello World!');
+							</script>
+							```
+							---
+							### In a js file
+							```html
+							<script src="script.js"></script>
+							```
+							---
+							Directly in the browser console
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### The DOM
+							---
+							Document Object Model
+							---
+							It is the tree-like structure that represents the HTML document.
+							<img data-src="https://www.freecodecamp.org/news/content/images/2021/09/Document.jpg" />
+							---
+							You can access and manipulate the DOM with Javascript.
+							---
+							Open the console and type:
+							```js
+							document
+							```
+							this is the root of the DOM.
+							---
+							```js
+							document.title
+							```
+							The title
+							---
+							```js
+							document.body
+							```
+							The body
+							---
+							```js
+							document.body.children
+							```
+							all the elements inside the body
+							---
+							```js
+							document.getElementById('id')
+							or
+							document.querySelector('#id')
+							```
+							Select an element by id
+							---
+							```js
+							document.getElementsByClassName('class')
+							or
+							document.querySelectorAll('.class')
+							```
+							Select elements by class
+							---
+							```js
+							document.getElementsByTagName('h1')
+							or
+							document.querySelectorAll('h1')
+							```
+							Select all h1 elements
+							---
+							How can I remmember all of these?
+							---
+							[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document) is your best friend.
+							---
+							## Manipulating the DOM
+							---
+							```js
+							document.getElementById('id').innerHTML = 'Hello World!';
+							```
+							---
+							```js
+							document.getElementById('id').style.color = 'red';
+							```
 
 							---
-							### Slide 2
-							Other things
+							```js
+							document.getElementById('id').style.backgroundColor = 'red';
+							```
+
+							---
+							```js
+							document.getElementById('id').style.display = 'none';
+							```
+							---
+							### Exercise
+							<p class="border border-solid" id="dummy-text">I'm a p paragraph, change the text inside to your name in red using the console. My ID is: dummy-text</p>
+
+
+
+
+
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Variables & Datatypes
+							---
+							Follow the below link
+
+
+							[Javascript Info](https://javascript.info/variables)
+
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Operators
+							---
+							Follow the below link
+
+
+							[Javascript Info](https://javascript.info/operators)
+							
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							### Conditional branching: if, '?'
+							---
+							Follow the below link
+
+
+							[Javascript Info](https://javascript.info/operators)
+							
 						</textarea
             >
           </section>
