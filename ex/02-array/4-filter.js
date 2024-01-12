@@ -1,6 +1,5 @@
 // 1. Find all the books with rating > 4.3
 // 2. Find all the books with rating > 4.3 and genres includes "fantasy"
-
 const books = [
   {
     title: "Good Omens",
@@ -39,3 +38,10 @@ const books = [
     genres: ["fiction", "fantasy"],
   },
 ];
+
+const highRating = books.filter(function (book) {
+  const isHighRating = book.rating > 4.3 && book.genres.includes("fantasy");
+  return isHighRating;
+});
+
+console.log(highRating);

@@ -20,3 +20,9 @@ const movies = [
 ];
 
 /* Write your code here */
+
+const newMovies = movies.map(function (movie) {
+  return `${movie.title.toUpperCase()} - ${movie.year}`;
+});
+
+console.log(newMovies);
