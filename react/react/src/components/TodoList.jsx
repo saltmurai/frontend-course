@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TodoItem from "./TodoItem";
 
-const LIST = [
-	{ name: "Buy milk", done: true },
-	{ name: "Buy eggs", done: false },
-	{ name: "Buy bread", done: true },
-]
 
 function TodoList() {
 	const [inputValue, setInputValue] = useState("")
+	const [todoList, setTodoList] = useState([])
+
+	useEffect(() => {
+		fetchTodoList()
+	}, [])
+
+	async function fetchTodoList(){
+		try {
+			const resp = await fetch("https://solid-terrapin-usefully.ngrok-free.app/api/collections/todoList/records")
+			const result = await resp.json()
+			setTodoList(result.items)
+		} catch(err) {
+			console.log(err)
+		}
+	}
+
 	function handleInput(e) {
 		setInputValue(e.target.value)
 	}
@@ -16,13 +27,8 @@ function TodoList() {
 		if(inputValue === "" || inputValue.trim() === "") {
 			return
 		}
-		LIST.push({
-			name: inputValue,
-			done: false
-		})
 		setInputValue("")
 	}
-	// Hooks
 
 
 
@@ -30,8 +36,8 @@ function TodoList() {
     <div className="w-80 h-80 border bg-gray-700 flex flex-col justify-start border-white rounded-md p-4">
 			<div>🪴 Todo List</div>
 			{
-				LIST.map((item) => {
-					return <TodoItem key={item.name} name={item.name} />
+				todoList.map((item) => {
+					return <TodoItem key={item.name} name={item.name} done={item.done} />
 				})
 			}
 			<div className="flex justify-start items-center gap-2">
