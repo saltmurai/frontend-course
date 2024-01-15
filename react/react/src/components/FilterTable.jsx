@@ -3,9 +3,11 @@ import { useState } from "react";
 /* eslint-disable react/prop-types */
 function SearchBar({fruitList, setFilter}) {
 	const [searchTerm, setSearchTerm] = useState("");
+	const [onlyStock, setOnlyStock] = useState(false);
 
 	function handleSearch(e){
-		setSearchTerm(e.target.value)
+		const value = e.target.value.toLowerCase();
+		setSearchTerm(value)
 		
 		if(e.target.value === "") {
 			setFilter(fruitList)
@@ -13,9 +15,13 @@ function SearchBar({fruitList, setFilter}) {
 		}
 
 		const filterItems = fruitList.filter((item) => {
-			return item.name.startsWith(e.target.value)
+			const name = item.name.toLowerCase()
+			return name.startsWith(value.trim()) && (onlyStock ? item.stocked : true)
 		})
 		setFilter(filterItems)
+	}
+	function handleStock(e){
+		setOnlyStock(e.target.checked)
 	}
 
 	
@@ -23,7 +29,7 @@ function SearchBar({fruitList, setFilter}) {
     <div className="flex flex-col justify-start">
       <input value={searchTerm} onChange={handleSearch} />
       <div>
-        <input type="checkbox" /> Only in stock
+        <input checked={onlyStock} onChange={handleStock} type="checkbox" /> Only in stock
       </div>
     </div>
   );
